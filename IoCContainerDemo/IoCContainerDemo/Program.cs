@@ -10,8 +10,10 @@ namespace IoCContainerDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("teste");
+            ICreditCard creditCard = new MasterCard();
+            var shopper = new Shopper(creditCard);
             Console.ReadKey();
+            
         }
     }
 }
