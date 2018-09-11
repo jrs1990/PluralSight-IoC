@@ -10,7 +10,7 @@ namespace IoCContainerDemo
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("teste");
         }
     }
 }
