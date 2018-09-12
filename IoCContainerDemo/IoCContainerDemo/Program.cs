@@ -10,8 +10,16 @@ namespace IoCContainerDemo
     {
         static void Main(string[] args)
         {
-            ICreditCard creditCard = new MasterCard();
-            var shopper = new Shopper(creditCard);
+ 
+            Resolver resolver = new Resolver();
+
+            resolver.Register<ICreditCard, Visa>();
+            resolver.Register<Shopper, Shopper>();
+            
+
+            var shopper = resolver.Resolve<Shopper>();
+            shopper.Charge();
+            
             Console.ReadKey();
             
         }

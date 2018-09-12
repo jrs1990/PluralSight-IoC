@@ -1,10 +1,10 @@
 ﻿namespace IoCContainerDemo
 {
-    public class MasterCard : ICreditCard
+    public class Visa : ICreditCard
     {
         public object Charge()
         {
-            return "Swiping the Mastercard";
+            return "Charging with the visa";
         }
     }
 }
