@@ -10,7 +10,18 @@ namespace IoCContainerDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("teste");
+ 
+            Resolver resolver = new Resolver();
+
+            resolver.Register<ICreditCard, Visa>();
+            resolver.Register<Shopper, Shopper>();
+            
+
+            var shopper = resolver.Resolve<Shopper>();
+            shopper.Charge();
+            
+            Console.ReadKey();
+            
         }
     }
 }
