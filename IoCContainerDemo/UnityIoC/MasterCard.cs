@@ -2,11 +2,17 @@
 {
     public class MasterCard : ICreditCard
     {
-        public int ChargeCount { get; set; }
+        public int ChargeCount
+        {
+            get
+            {
+                return 0;
+            }
+        }
+
         public string Charge()
         {
-            ChargeCount++;
-            return "Swiping the Mastercard";
+           return "Swiping the Mastercard";
         }
     }
 }

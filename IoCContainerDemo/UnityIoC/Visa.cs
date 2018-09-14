@@ -2,9 +2,16 @@
 {
     public class Visa : ICreditCard
     {
+        public int ChargeCount {
+            get
+            {
+                return 0;
+            }
+        }
+
         public string Charge()
         {
-            return "Charging with the visa";
+            return "Swiping the Visa";
         }
     }
 }
