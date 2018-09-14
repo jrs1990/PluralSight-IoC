@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCContainerDemo", "IoCContainerDemo\IoCContainerDemo.csproj", "{5269B634-484A-4C41-9E6F-EF8ED2A86644}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityIoC", "UnityIoC\UnityIoC.csproj", "{6D3065A7-D824-45A9-96E2-83B4F54F87B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5269B634-484A-4C41-9E6F-EF8ED2A86644} = {5269B634-484A-4C41-9E6F-EF8ED2A86644}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
