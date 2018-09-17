@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
 
+
 namespace CastleIoC
 {
     class Program
     {
         static void Main(string[] args)
         {
+
             var container = new WindsorContainer();
 
-            container.Register(Component.For<Shopper>());
-            container.Register(Component.For<ICreditCard>().ImplementedBy<MasterCard>());
-
+            container.Install(new ShopperInstaller());
             var shopper = container.Resolve<Shopper>();
             shopper.Charge();
             Console.WriteLine(shopper.ChargesForCurrentCard);

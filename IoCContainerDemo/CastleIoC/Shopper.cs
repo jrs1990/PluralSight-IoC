@@ -15,7 +15,7 @@ namespace CastleIoC
         public void Charge()
         {
             var chargeMessage = CreditCard.Charge();
-            Console.WriteLine(CreditCard.Charge());
+            Console.WriteLine(chargeMessage);
         }
     }
 }
