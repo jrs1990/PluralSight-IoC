@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices;
-using Unity;
-using Unity.Injection;
-using Unity.Resolution;
-using Unity.Lifetime;
-namespace UnityIoC
+using Castle.Windsor;
+using Castle.MicroKernel.Registration;
+
+namespace CastleIoC
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var container = new UnityContainer();
+            var container = new WindsorContainer();
 
-            container.RegisterType<ICreditCard, MasterCard>(new ContainerControlledLifetimeManager());
+            container.Register(Component.For<Shopper>());
+            container.Register(Component.For<ICreditCard>().ImplementedBy<MasterCard>());
 
             var shopper = container.Resolve<Shopper>();
-            shopper.Charge();
             shopper.Charge();
             Console.WriteLine(shopper.ChargesForCurrentCard);
 
@@ -28,11 +25,8 @@ namespace UnityIoC
             shopper2.Charge();
             Console.WriteLine(shopper2.ChargesForCurrentCard);
 
-           
-
             Console.ReadKey();
-        
-
+            
         }
     }
 }
