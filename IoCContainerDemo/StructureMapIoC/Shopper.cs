@@ -8,13 +8,18 @@ namespace StructureMapIoC
 {
     class Shopper
     {
-        public ICreditCard CreditCard { get; set; }
+        private ICreditCard creditCard;
+        public Shopper(ICreditCard creditCard)
+        {
+            this.creditCard = creditCard;
+        }
+        
 
-        public int ChargesForCurrentCard { get { return CreditCard.ChargeCount; } }
+        public int ChargesForCurrentCard { get { return this.creditCard.ChargeCount; } }
 
         public void Charge()
         {
-            var chargeMessage = CreditCard.Charge();
+            var chargeMessage = this.creditCard.Charge();
             Console.WriteLine(chargeMessage);
         }
     }

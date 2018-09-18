@@ -11,9 +11,18 @@ namespace StructureMapIoC
     {
         static void Main(string[] args)
         {
-            var container = new Container();
-            container.Configure(x => x.For<ICreditCard>().Use<MasterCard>());
-            container.Configure(x => x.For<ICreditCard>().Use<Visa>().Named("visa"));
+            var container = new Container(new MyResgitry());
+            
+                        
+            var shopper = container.GetInstance<Shopper>();
+            shopper.Charge();
+            Console.WriteLine(shopper.ChargesForCurrentCard);
+
+            var shopper2 = container.GetInstance<Shopper>();
+            shopper2.Charge();
+            Console.WriteLine(shopper2.ChargesForCurrentCard);
+
+            Console.Read();
 
 
         }
