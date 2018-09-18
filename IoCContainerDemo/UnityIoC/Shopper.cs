@@ -9,14 +9,20 @@ namespace UnityIoC
     class Shopper
     {
         private readonly ICreditCard creditCard;
+        private int _ChargeCount;
+
         public int ChargeCount
         {
             get
             {
-                return 0;
+                return _ChargeCount;
+            }
+            set
+            {
+                _ChargeCount = value;
             }
         }
-        public int ChargesForCurrentCard { get;  set; }
+        public int ChargesForCurrentCard { get { return this.ChargeCount; } }
 
         public Shopper (ICreditCard creditCard)
         {
@@ -26,7 +32,7 @@ namespace UnityIoC
         public void Charge()
         {
             var chargeMessage = creditCard.Charge();
-            
+            ChargeCount++;
             Console.WriteLine(chargeMessage);
         }
     }

@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCContainerDemo", "IoCContainerDemo\IoCContainerDemo.csproj", "{5269B634-484A-4C41-9E6F-EF8ED2A86644}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityIoC", "UnityIoC\UnityIoC.csproj", "{6D3065A7-D824-45A9-96E2-83B4F54F87B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5269B634-484A-4C41-9E6F-EF8ED2A86644} = {5269B634-484A-4C41-9E6F-EF8ED2A86644}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastleIoC", "CastleIoC\CastleIoC.csproj", "{E05F43F2-67DF-415C-9CBF-92802DCDBD55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{6D3065A7-D824-45A9-96E2-83B4F54F87B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D3065A7-D824-45A9-96E2-83B4F54F87B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D3065A7-D824-45A9-96E2-83B4F54F87B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E05F43F2-67DF-415C-9CBF-92802DCDBD55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E05F43F2-67DF-415C-9CBF-92802DCDBD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E05F43F2-67DF-415C-9CBF-92802DCDBD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E05F43F2-67DF-415C-9CBF-92802DCDBD55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
